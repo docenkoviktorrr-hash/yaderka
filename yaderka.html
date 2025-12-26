@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Очень серьёзный сайт</title>
+
+    <style>
+        body {
+            background: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            width: 350px;
+            box-shadow: 0 0 20px red;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            background: red;
+            color: white;
+        }
+
+        button:hover {
+            background: darkred;
+        }
+
+        p {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>⚠️ This project is a joke and does not represent real actions ⚠️</h2>
+
+    <input type="text" id="name" placeholder="Введите имя">
+
+    <button onclick="launch()">Отправить в «имя» ядерку 💣</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+    function launch() {
+        const name = document.getElementById("name").value;
+        const result = document.getElementById("result");
+
+        if (name === "") {
+            alert("Введите имя 😡");
+            return;
+        }
+
+        const confirmLaunch = confirm(
+            `Вы уверены, что хотите отправить ядерку в "${name}"?`
+        );
+
+        if (confirmLaunch) {
+            result.textContent = `🚀 Запуск в сторону "${name}"... (через писят сек иму бай бай)`;
+        } else {
+            result.textContent = "❌ Вы отказались от выбора";
+        }
+    }
+</script>
+
+</body>
+</html>
